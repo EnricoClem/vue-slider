@@ -29,6 +29,7 @@ createApp({
     return {
       slides: slides,
       currentIndex: 0,
+      autoplay: null,
     }
   },
   methods: {
@@ -41,5 +42,17 @@ createApp({
         if(this.currentIndex < this.slides.length -1) this.currentIndex++
         else this.currentIndex = 0
     },
+    stopInterval() {
+        if (this.autoplay !== null) {
+            clearInterval(this.autoplay)
+            this.autoplay = null
+        }
+    },
+    startInterval() {
+        this.autoplay = setInterval(this.nextSlide, 2500)
+    }
+  },
+  mounted() {
+    this.startInterval()
   }
 }).mount('#app')
