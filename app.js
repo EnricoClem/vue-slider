@@ -28,6 +28,18 @@ createApp({
   data() {
     return {
       slides: slides,
+      currentIndex: 0,
     }
+  },
+  methods: {
+    prevSlide() {
+        this.currentIndex === 0 
+        ? (this.currentIndex = this.slides.length - 1)
+        : this.currentIndex--
+    },
+    nextSlide() {
+        if(this.currentIndex < this.slides.length -1) this.currentIndex++
+        else this.currentIndex = 0
+    },
   }
 }).mount('#app')
