@@ -13,11 +13,11 @@
             <div class="container">
                 <div class="slide-wrapper" tabindex="0">
 
-                    <div class="item active">
-                        <img src="img/01.webp" alt="Spiderman">
+                    <div v-for="slide in slides" class="item active">
+                        <img src="{{ image }}" alt="Spiderman">
                         <div class="text">
-                            <h3>Spiderman</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cumque consectetur, dolore quis, officiis dolor a velit quasi temporibus, corrupti porro odio eaque rem culpa voluptates sunt beatae unde iure iusto magni ab est? Deserunt itaque consequatur ratione reprehenderit cum voluptates quisquam, quas mollitia porro, accusantium at? Incidunt, modi a?</p>
+                            <h3>{{ title }}</h3>
+                            <p>{{ text }}</p>
                         </div>
                     </div>
 
